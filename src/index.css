@@ -1,3 +1,78 @@
+:root {
+  --color-secondary: #5E92A7;
+  --color-tertiary: #423A38;
+  --color-light: #EEEAE7;
+  --color-danger: #C57C85;
+  --color-danger-dark: #DA2D2F;
+  --color-danger-light: #EFCECF;
+  --color-success-light: #CFD6CF;
+  --color-success: #638373;
+  --color-success-dark: #365143;
+  --color-warning: #DA9C33;
+  --color-warning-dark: #DA9C33;
+  --color-warning-light: #edd7b2;
+}
+
+
+.bg-tertiary {
+  background-color: var(--color-tertiary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-light {
+  background-color: var(--color-light);
+}
+
+.bg-danger {
+  background-color: var(--color-danger);
+}
+
+.bg-danger-light {
+  background-color: var(--color-danger-light);
+}
+
+.bg-danger-dark {
+  background-color: var(--color-danger-dark);
+}
+
+.bg-warning-light {
+  background-color: var(--color-warning-light);
+}
+
+.bg-success-light {
+  background-color: var(--color-success-light);
+}
+
+
+.text-danger {
+  color: var(--color-danger)
+}
+
+.text-danger-dark {
+  color: var(--color-danger-dark)
+}
+
+.text-success-dark {
+  color: var(--color-success)
+}
+
+.text-warning-dark {
+  color: var(--color-warning-dark)
+}
+
+
+.text-tertiary {
+  color: var(--color-tertiary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +86,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
