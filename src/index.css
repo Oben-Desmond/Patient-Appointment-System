@@ -5,12 +5,15 @@
   --color-danger: #C57C85;
   --color-danger-dark: #DA2D2F;
   --color-danger-light: #EFCECF;
+  --color-danger-tint: #fcf1f1;
   --color-success-light: #CFD6CF;
+  --color-success-tint: #effdef;
   --color-success: #638373;
   --color-success-dark: #365143;
   --color-warning: #DA9C33;
   --color-warning-dark: #DA9C33;
-  --color-warning-light: #edd7b2;
+  --color-warning-light: #fff4e2;
+  --color-warning-tint: #fff7ea;
 }
 
 
@@ -34,6 +37,10 @@
   background-color: var(--color-danger-light);
 }
 
+.bg-danger-tint {
+  background-color: var(--color-danger-tint);
+}
+
 .bg-danger-dark {
   background-color: var(--color-danger-dark);
 }
@@ -46,6 +53,13 @@
   background-color: var(--color-success-light);
 }
 
+.bg-warning-tint {
+  background-color: var(--color-warning-tint);
+}
+
+.bg-success-tint {
+  background-color: var(--color-success-tint);
+}
 
 .text-danger {
   color: var(--color-danger)

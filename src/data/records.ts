@@ -42,7 +42,7 @@ export const AppointmentData: PatientRecord[] = [
         phone: "367883349",
         post_ap_comment: "abndab dbanbd",
         sex: 'male',
-        status: "missed",
+        status: "rescheduled",
         timestamp: Date.now()
     }
     ,
@@ -57,7 +57,68 @@ export const AppointmentData: PatientRecord[] = [
         phone: "367883349",
         post_ap_comment: "abndab dbanbd",
         sex: 'male',
-        status: "missed",
+        status: "passed",
+        timestamp: Date.now()
+    }
+
+    ,
+    {
+        address: 'Buea',
+        age: 14,
+        ap_comment: 'anjdjs sndbs nbdnfbdn nsbndbns dnbnsbdn',
+        code: 'ASDNS',
+        email: 'hjahj@jjk.com',
+        name: 'Obi L',
+        number: '7837843873',
+        phone: "367883349",
+        post_ap_comment: "abndab dbanbd",
+        sex: 'male',
+        status: "rescheduled",
+        timestamp: Date.now()
+    }
+    ,
+    {
+        address: 'Buea',
+        age: 14,
+        ap_comment: 'anjdjs sndbs nbdnfbdn nsbndbns dnbnsbdn',
+        code: 'ASDNS',
+        email: 'hjahj@jjk.com',
+        name: 'Obi L',
+        number: '7837843873',
+        phone: "367883349",
+        post_ap_comment: "abndab dbanbd",
+        sex: 'male',
+        status: "passed",
+        timestamp: Date.now()
+    }
+    ,
+    {
+        address: 'Buea',
+        age: 14,
+        ap_comment: 'anjdjs sndbs nbdnfbdn nsbndbns dnbnsbdn',
+        code: 'ASDNS',
+        email: 'hjahj@jjk.com',
+        name: 'Obi L',
+        number: '7837843873',
+        phone: "367883349",
+        post_ap_comment: "abndab dbanbd",
+        sex: 'male',
+        status: "pending",
+        timestamp: Date.now()
+    }
+    ,
+    {
+        address: 'Buea',
+        age: 14,
+        ap_comment: 'anjdjs sndbs nbdnfbdn nsbndbns dnbnsbdn',
+        code: 'ASDNS',
+        email: 'hjahj@jjk.com',
+        name: 'Obi L',
+        number: '7837843873',
+        phone: "367883349",
+        post_ap_comment: "abndab dbanbd",
+        sex: 'male',
+        status: "pending",
         timestamp: Date.now()
     }
 
