@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { PatientRecord } from '../types'
 
 const PatientRecordItem: React.FC<{ record: PatientRecord }> = ({ record }) => {
     let color: string | null = null
+    const navigate = useNavigate()
 
     switch (record.status) {
         case 'missed': color = 'danger';
@@ -16,9 +18,12 @@ const PatientRecordItem: React.FC<{ record: PatientRecord }> = ({ record }) => {
             break;
     }
 
+    function viewRecord() {
+        navigate('/edit-record', { state: record })
+    }
 
     return (
-        <div className="grid w-full hover:bg-gray-50 active:opacity-80 cursor-pointer gap-0 md:gap-9 grid-cols-8 mb-3 text-gray-500 font-semibold p-3 px-3 bg-white text-sm rounded-lg">
+        <div onClick={viewRecord} className="grid w-full hover:bg-gray-50 active:opacity-80 cursor-pointer gap-0 md:gap-9 grid-cols-8 mb-3 text-gray-500 font-semibold p-3 px-3 bg-white text-sm rounded-lg">
             <div className='text-gray-900  col-span-2 md:col-span-1'>{record.name}</div>
             <div>{record.code}</div>
             <div>{record.age}</div>

@@ -19,6 +19,8 @@ const Home = () => {
     const passed = records.filter(record => record.status == "passed").length
     const rescheduled = records.filter(record => record.status == "rescheduled").length
 
+    console.log(records, "records home")
+
 
     const navigation = useNavigate()
 

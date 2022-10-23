@@ -16,11 +16,15 @@ export const recordSlice = createSlice({
         updateRecord: (state, action: PayloadAction<PatientRecord[]>) => {
             state.value = [...action.payload]
         },
+        editRecordData: (state, action: PayloadAction<PatientRecord>) => {
+            const index = state.value.findIndex((rec) => rec.sn == action.payload.sn)
+            state.value[index] = action.payload;
+        },
 
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { updateRecord } = recordSlice.actions
+export const { updateRecord, editRecordData } = recordSlice.actions
 
 export default recordSlice.reducer

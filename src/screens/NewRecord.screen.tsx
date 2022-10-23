@@ -1,8 +1,10 @@
+import { Alert } from 'antd'
 import React, { useState } from 'react'
 import { FaEbay } from 'react-icons/fa'
 import { IoArrowBack } from 'react-icons/io5'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import AlertInfo from '../components/AlertInfo.component'
 import { updateRecord } from '../state/records.state'
 import { RootState } from '../state/store'
 import { PatientRecord } from '../types'
@@ -35,6 +37,7 @@ const NewRecord = () => {
   const [beforeNotes, setBeforeNotes] = useState("")
   const [afterNotes, setAfterNotes] = useState("")
 
+  const [showAlert, setShowAlert] = useState(false)
 
   const navigate = useNavigate()
 
@@ -58,18 +61,45 @@ const NewRecord = () => {
       status,
       timestamp: Date.now(),
       app_date: date,
-      req_date: requestDate
+      req_date: requestDate,
+      time: appTime
     }
 
     console.log(record)
     dispatch(updateRecord([...allRecords, record]))
+    initializeForm()
+    setShowAlert(true)
+    setTimeout(() => {
+      setShowAlert(true)
+    }, 3000);
+
+  }
+
+  function initializeForm() {
+    setName("")
+    setAge("")
+    setSex("male")
+    setPhone("")
+    setEmail("")
+    setDate("")
+    setFirstTime(false)
+    setRequestDate("")
+    setStatus("pending")
+    setAppTime("")
+    setAddress("")
+    setCity("")
+    setBeforeNotes("")
+    setAfterNotes("")
+
+
 
   }
 
 
 
   return (
-    <div className='bg-light min-h-screen '>
+    <div className='bg-light min-h-screen relative'>
+      <AlertInfo message='Record saved...' show={false} onDidmiss={() => setShowAlert(false)} type={'success'} />
       <form onSubmit={submitRecord}>
         <div className="header bg-tertiary shadow-xl">
           <div className="w-3/4 p-3 text-white relative bg-secondary rounded-br-full font-bold" >

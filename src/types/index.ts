@@ -15,6 +15,7 @@ export interface PatientRecord {
     code: string,
     status: 'missed' | 'passed' | 'rescheduled' | 'pending',
     app_date: string,
-    req_date: string
+    req_date: string,
+    time: string
 
 }
