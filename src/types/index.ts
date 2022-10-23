@@ -5,7 +5,7 @@ export interface PatientRecord {
     address: string,
     phone: string,
     email: string,
-    timestamp?: number,
+    timestamp: number,
     age: number,
     sex: 'male' | 'female',
     first_time: boolean,
@@ -13,6 +13,8 @@ export interface PatientRecord {
     ap_comment: string,
     post_ap_comment: string,
     code: string,
-    status: 'missed' | 'passed' | 'rescheduled' | 'pending'
+    status: 'missed' | 'passed' | 'rescheduled' | 'pending',
+    app_date: string,
+    req_date: string
 
 }

@@ -1,15 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Home from './screens/Home.screen';
-import NewRecord from './screens/NewRecord.screen';
+import { BrowserRouter } from 'react-router-dom';
+import MainNavigation from './components/MainNavigation.component';
 
 function App() {
   return (
-    <div className="">
-      <NewRecord />
-      {/* <Home /> */}
-    </div>
+    <BrowserRouter>
+      <MainNavigation />
+    </BrowserRouter>
   );
 }
 

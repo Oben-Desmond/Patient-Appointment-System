@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaEbay } from 'react-icons/fa'
 import { IoArrowBack } from 'react-icons/io5'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { updateRecord } from '../state/records.state'
 import { RootState } from '../state/store'
 import { PatientRecord } from '../types'
@@ -13,7 +14,7 @@ const NewRecord = () => {
 
   // const [code, setCode] = useState("")
 
-  const allRecords: PatientRecord[] = useSelector((state: RootState) => state.records)
+  const allRecords: PatientRecord[] = useSelector((state: RootState) => state.records.value)
   const dispatch = useDispatch()
 
 
@@ -35,8 +36,11 @@ const NewRecord = () => {
   const [afterNotes, setAfterNotes] = useState("")
 
 
+  const navigate = useNavigate()
+
   function submitRecord(ev: React.FormEvent<HTMLFormElement>) {
     ev.preventDefault()
+
 
     const record: PatientRecord = {
       address,
@@ -52,9 +56,12 @@ const NewRecord = () => {
       sex,
       sn,
       status,
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      app_date: date,
+      req_date: requestDate
     }
 
+    console.log(record)
     dispatch(updateRecord([...allRecords, record]))
 
   }
@@ -71,8 +78,10 @@ const NewRecord = () => {
         </div>
         <div className="content px-5 md:px-[40px] py-8">
           <div className="nav uppercase">
-            <IoArrowBack className='inline-block  float-left mt-[2px] text-[20px]' />
-            <span className='text-md font-bold ml-5'>New Record</span>
+            <button onClick={() => navigate(-1)} className='inline-block  float-left mt-[2px] text-[20px]'>
+              <IoArrowBack />
+            </button>
+            <span className='text-md font-bold ml-5'>New Record </span>
           </div>
           <div className='px-2 md:px-[40px]'>
             <div className="mt-10">
@@ -146,7 +155,7 @@ const NewRecord = () => {
                 </div>
                 <div className=' col-span-9 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm text-gray-700 my-4'>Appointment Status</div>
-                  <select required value={status} onChange={(e) => setStatus(e.target.value as "pending")} className='w-full border border-gray-300 pr-6 rounded text-sm p-2 text-gray-800 outline-none inline-block'>
+                  <select required disabled value={status} onChange={(e) => setStatus(e.target.value as "pending")} className='w-full border border-gray-300 pr-6 rounded text-sm p-2 text-gray-800 outline-none inline-block'>
                     <option value="pending">Pending</option>
                     <option value="missed">Missed</option>
                     <option value="rescheduled">Rescheduled</option>
@@ -186,9 +195,9 @@ const NewRecord = () => {
                   <div className='text-sm text-gray-700 my-3'>Before Appointment</div>
                   <textarea required value={beforeNotes} onChange={(e) => setBeforeNotes(e.target.value)} className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
-                <div className=' col-span-9 sm:col-span-3 lg:col-span-2 '>
+                <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm text-gray-700 my-3'>After Appointment</div>
-                  <textarea value={afterNotes} onChange={(e) => setAfterNotes(e.target.value)} placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <textarea disabled={status == 'pending'} value={afterNotes} onChange={(e) => setAfterNotes(e.target.value)} placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
 
               </div>

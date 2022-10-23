@@ -3,14 +3,18 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { PatientRecord } from '../types'
 
 
-const initialState: PatientRecord[] = [];
+const initialState: {
+    value: PatientRecord[]
+} = {
+    value: []
+};
 
 export const recordSlice = createSlice({
     name: 'records',
     initialState,
     reducers: {
         updateRecord: (state, action: PayloadAction<PatientRecord[]>) => {
-            state = action.payload
+            state.value = [...action.payload]
         },
 
     },
