@@ -21,7 +21,6 @@ const ListPaginationController: React.FC<{ list: PatientRecord[], pageLen: numbe
         //     temp.push(list[i])
         // }
         // setPages(temp_pages)
-        // console.log(temp_pages)
     }, [pageLen, list])
 
 

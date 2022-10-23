@@ -65,7 +65,6 @@ const NewRecord = () => {
       time: appTime
     }
 
-    console.log(record)
     dispatch(updateRecord([...allRecords, record]))
     initializeForm()
     setShowAlert(true)

@@ -19,9 +19,6 @@ const Home = () => {
     const passed = records.filter(record => record.status == "passed").length
     const rescheduled = records.filter(record => record.status == "rescheduled").length
 
-    console.log(records, "records home")
-
-
     const navigation = useNavigate()
 
     useEffect(() => {
@@ -74,7 +71,7 @@ const Home = () => {
                     <SummaryCard color='success' status='Passed' value={passed + ""} />
                 </div>
                 <div className="py-3">
-                    <PatientRecordList list={visibleList} updateList={(visibleList) => { setVisibleList([...list]) }} />
+                    <PatientRecordList list={visibleList} updateList={(visibleList) => { setVisibleList([...visibleList]) }} />
                 </div>
             </div>
             <div className="relative inline-block md:block md:fixed bottom-1 md:bottom-10 z-20 left-1/2 -translate-x-1/2">

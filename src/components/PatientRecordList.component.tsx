@@ -3,12 +3,11 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import { PatientRecord } from '../types'
 import PatientRecordItem from './PatientRecordItem.component'
 import { IoFilterSharp } from "react-icons/io5"
+import FilterHeaderButton, { FilterProp } from './FilterHeaderButton.component'
 
-const PatientRecordList: React.FC<{ list: PatientRecord[], updateList: (list: PatientRecord[]) => void }> = ({ list }) => {
+const PatientRecordList: React.FC<{ list: PatientRecord[], updateList: (list: PatientRecord[]) => void }> = ({ list, updateList }) => {
 
-    const filters = ['name', 'code', 'age', 'address', 'phone', 'Appt. Date', 'Record Date', 'status']
-
-
+    const filters: FilterProp[] = [{ id: 'name', value: 'name' }, { id: 'code', value: 'code' }, { id: 'age', value: 'age' }, { id: 'address', value: 'address' }, { id: 'phone', value: 'phone' }, { id: 'app_date', value: 'Appt. Date' }, { id: 'req_date', value: 'Record Date' }, { id: 'status', value: 'status' }]
 
 
     return (
@@ -17,21 +16,7 @@ const PatientRecordList: React.FC<{ list: PatientRecord[], updateList: (list: Pa
                 <div className=''>
                     <div className="grid grid-cols-8 gap-8 w-[170vh] lg:w-full"  >
                         {filters.map((filter, index) => {
-
-
-                            return <div key={index} className="p-3 col-span-1  font-bold capitalize rounded-lg text-black bg-white inline-block text-sm">
-                                {filter}
-                                <div className="inline-block float-right">
-                                    <FaChevronUp className='text-[10px]' />
-                                    <FaChevronDown className='text-[10px]' />
-                                </div>
-                                <div className="inline-block mt-1 float-right mr-2">
-                                    {
-                                        (filter == "age" || filter == "status") && <IoFilterSharp className='text-[16px]' />}
-                                </div>
-
-
-                            </div>
+                            return <FilterHeaderButton list={list} key={index} filter={filter} updateList={(list) => { updateList(list); console.log(list) }} />
                         })}
                     </div>
                 </div>

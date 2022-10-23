@@ -84,7 +84,6 @@ const EditRecord: React.FC = () => {
             time: appTime
         }
 
-        console.log(record)
         dispatch(editRecordData(record))
         setShowAlert(true)
         setEditing(false)
