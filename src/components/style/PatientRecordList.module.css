@@ -1,0 +1,13 @@
+.controller {
+    position: absolute;
+    bottom: 10x;
+    background-color: red !important;
+}
+
+.controller * {
+    border: none
+}
+
+.bg-tint {
+    background-color: #F4EAE9;
+}

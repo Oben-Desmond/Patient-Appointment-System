@@ -74,9 +74,9 @@ const Home = () => {
                     <PatientRecordList list={visibleList} updateList={(visibleList) => { setVisibleList([...visibleList]) }} />
                 </div>
             </div>
-            <div className="relative inline-block md:block md:fixed bottom-1 md:bottom-10 z-20 left-1/2 -translate-x-1/2">
+            {/* <div className="relative inline-block md:block md:fixed bottom-1 md:bottom-10 z-20 left-1/2 -translate-x-1/2">
                 <ListPaginationController list={records} pageLen={20} onPageChange={(pagedRecords) => { setlist([...pagedRecords]) }} />
-            </div>
+            </div> */}
             <div className="fixed hover:rotate-90 rotate-0 md:rotate-90 cursor-pointer transition-all bottom-10 z-20  right-10 sm:right-16 lg:right-40 ">
                 <div onClick={() => navigation("/new-record", {})} className="p-2 px-2 scale-125 bg-danger text-white rounded-md shadow-lg">
                     <IoMdAdd />
