@@ -12,12 +12,9 @@ const PatientRecordList: React.FC<{ list: PatientRecord[], updateList: (list: Pa
 
     const filters: FilterProp[] = [{ id: 'name', value: 'name' }, { id: 'code', value: 'code' }, { id: 'age', value: 'age' }, { id: 'address', value: 'address' }, { id: 'phone', value: 'phone' }, { id: 'app_date', value: 'Appt. Date' }, { id: 'req_date', value: 'Record Date' }, { id: 'status', value: 'status' }]
 
-    let users = [{ 'a': 123, 'b': 345 }, { 'c': 678, 'd': 891 }];
-
-
     return (
         <div  >
-            <div className="filter-header w-full overflow-scroll xl:overflow-auto py-4 md:py-0">
+            <div className="filter-header min-h-full w-full overflow-scroll xl:overflow-auto py-4 md:py-0">
                 <div className=''>
                     <div className="grid grid-cols-8 gap-8 w-[170vh] lg:w-full"  >
                         {filters.map((filter, index) => {
@@ -25,10 +22,10 @@ const PatientRecordList: React.FC<{ list: PatientRecord[], updateList: (list: Pa
                         })}
                     </div>
                 </div>
-                <div className='py-4  w-[170vh] lg:w-full' >
+                <div className='py-4 w-[170vh] lg:w-full min-h-[70vh]' >
                     <PaginatedList
                         list={list}
-                        itemsPerPage={1}
+                        itemsPerPage={20}
                         ControlItem={`button`}
                         activeControlClass={'active font-bold bg-red-200 rounded-md bg-opacity-20'}
                         paginatedListContainerClass={'div'}

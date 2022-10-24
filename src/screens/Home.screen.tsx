@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import ListPaginationController from '../components/ListPaginationController.component'
+import { useEffect, useState } from 'react'
 import PatientRecordList from '../components/PatientRecordList.component'
 import SearchBox from '../components/SearchBox.component'
 import SummaryCard from '../components/SummaryCard.component'

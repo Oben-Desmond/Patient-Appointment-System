@@ -69,7 +69,7 @@ const NewRecord = () => {
     initializeForm()
     setShowAlert(true)
     setTimeout(() => {
-      setShowAlert(true)
+      setShowAlert(false)
     }, 3000);
 
   }
@@ -98,7 +98,7 @@ const NewRecord = () => {
 
   return (
     <div className='bg-light min-h-screen relative'>
-      <AlertInfo message='Record saved...' show={false} onDidmiss={() => setShowAlert(false)} type={'success'} />
+      <AlertInfo message='Record saved...' show={showAlert} onDidmiss={() => setShowAlert(false)} type={'success'} />
       <form onSubmit={submitRecord}>
         <div className="header bg-tertiary shadow-xl">
           <div className="w-3/4 p-3 text-white relative bg-secondary rounded-br-full font-bold" >
