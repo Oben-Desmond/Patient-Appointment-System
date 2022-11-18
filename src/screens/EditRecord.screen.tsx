@@ -271,7 +271,7 @@ const EditRecord: React.FC = () => {
                             </div>
                         </div>
                         <div className={`py-2 fixed bottom-5 right-20 transition-all ${editing ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                            <Button type="primary" className="p-2 px-4 float-none md:float-right rounded shadow bg-red-theme text-sm text-white" icon={<SaveOutlined className='mr-2' />} size={"small"} >Save</Button>
+                            <button type="submit" className="p-2 px-4 float-none md:float-right rounded shadow bg-red-theme text-sm text-white" >Save</button>
                         </div>
 
                         <div className="h-20"></div>

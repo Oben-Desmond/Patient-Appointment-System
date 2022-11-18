@@ -233,9 +233,9 @@ const NewRecord = () => {
               </div>
             </div>
             <div className="py-2 ">
-              <Button className="p-2 px-4 float-none md:float-right rounded shadow bg-red-theme text-sm text-white">
+              <button type='submit' className="p-2 px-4 float-none md:float-right rounded shadow bg-red-theme text-sm text-white">
                 Save
-              </Button>
+              </button >
             </div>
 
             <div className="h-20"></div>
