@@ -1,4 +1,6 @@
-import { Alert } from 'antd'
+import { DownloadOutlined, SaveOutlined } from '@ant-design/icons'
+import { Alert, Button, DatePicker, Input } from 'antd'
+import TextArea from 'antd/lib/input/TextArea'
 import React, { useEffect, useState } from 'react'
 import { IoArrowBack, IoArrowUndoOutline, IoPencilOutline } from 'react-icons/io5'
 import { useDispatch, useSelector } from 'react-redux'
@@ -136,18 +138,18 @@ const EditRecord: React.FC = () => {
                 </div>
                 <div className="content px-5 md:px-[40px] py-8">
                     <div className="nav uppercase">
-                        <button onClick={() => navigate(-1)} className='inline-block  float-left mt-[2px] text-[20px]'>
+                        <Button onClick={() => navigate(-1)} className='inline-block  float-left mt-[2px] text-[20px]'>
                             <IoArrowBack />
-                        </button>
+                        </Button>
                         <span className='text-md font-bold ml-5'>View Record </span>
-                        {!editing && <button onClick={() => setEditing(true)} className='text-md rounded p-2 border border-red-400  float-right text-red-400'>
+                        {!editing && <Button onClick={() => setEditing(true)} className='text-md rounded p-2 border border-red-400  float-right text-red-400'>
                             <IoPencilOutline className='inline-block mr-[5px]' />
                             Edit Record
-                        </button>}
-                        {editing && <div onClick={() => cancelEditing()} className='text-md cursor-pointer rounded p-2 border border-gray-400  float-right text-gray-400'>
+                        </Button>}
+                        {editing && <Button onClick={() => cancelEditing()} className='text-md cursor-pointer rounded p-2 border border-gray-400  float-right text-gray-400'>
                             <IoArrowUndoOutline className='inline-block mr-[5px]' />
                             Cancel Changes
-                        </div>}
+                        </Button>}
                     </div>
                     <div className='px-2 md:px-[40px]'>
                         <div className="mt-10">
@@ -155,19 +157,19 @@ const EditRecord: React.FC = () => {
                             <div className="grid grid-cols-10 gap-y-2 gap-x-5 py-2">
                                 <div className='col-span-10 sm:col-span-3 lg:col-span-1 '>
                                     <div className='text-sm my-2 text-gray-700'>Unique Code</div>
-                                    <input disabled={!editing} required value={code}
+                                    <Input disabled={!editing} required value={code}
                                         //  onChange={(e) => setCode(e.target.value)} 
                                         type="text" className='w-full rounded text-sm p-2 border  border-gray-300 text-gray-800 outline-none inline-block' />
                                 </div>
                                 <div className='col-span-10 sm:col-span-3 lg:col-span-1 '>
                                     <div className='text-sm my-2 text-gray-700'>Age</div>
-                                    <input disabled={!editing} required value={age}
+                                    <Input disabled={!editing} required value={age}
                                         onChange={(e) => setAge(e.target.value)}
                                         type="number" className='w-full rounded border  border-gray-300 text-sm p-2 text-gray-800 outline-none inline-block' />
                                 </div>
                                 <div className=' col-span-10 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm my-2 text-gray-700'>Name</div>
-                                    <input disabled={!editing} required value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                                    <Input disabled={!editing} required value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                                 </div>
                                 <div className=' col-span-10 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm my-2 text-gray-700'>Sex</div>
@@ -178,11 +180,11 @@ const EditRecord: React.FC = () => {
                                 </div>
                                 <div className=' col-span-10 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm my-2 text-gray-700'>Phone</div>
-                                    <input disabled={!editing} required value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder='6790845454' className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                                    <Input disabled={!editing} required value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder='6790845454' className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                                 </div>
                                 <div className=' col-span-10 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm my-2 text-gray-700'>Email</div>
-                                    <input disabled={!editing} required value={email} onChange={(e) => setEmail(e.target.value)} type="text" className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                                    <Input disabled={!editing} required value={email} onChange={(e) => setEmail(e.target.value)} type="text" className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                                 </div>
 
                             </div>
@@ -205,7 +207,7 @@ const EditRecord: React.FC = () => {
                             <div className="grid grid-cols-10 gap-y-2 gap-x-5 lg:gap-x-14 py-2">
                                 <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm text-gray-700 my-4'>Appointment date</div>
-                                    <input disabled={!editing} required value={date} onChange={(e) => setDate(e.target.value)} type="date" className='input-field w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                                    <Input disabled={!editing} required value={date} onChange={(e) => setDate(e.target.value)} type="date" className='Input-field w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                                 </div>
                                 <div className=' col-span-9 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm text-gray-700 my-4'>First time</div>
@@ -216,7 +218,7 @@ const EditRecord: React.FC = () => {
                                 </div>
                                 <div className=' col-span-9 sm:col-span-3 lg:col-span-2 relative'>
                                     <div className='text-sm text-gray-700 my-4'>Request date</div>
-                                    <input disabled={!editing} required value={requestDate} onChange={(e) => setRequestDate(e.target.value)} type={'date'} className='input-field2 w-full border border-gray-300 pr-6 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                                    <Input disabled={!editing} required value={requestDate} onChange={(e) => setRequestDate(e.target.value)} type={'date'} className='Input-field w-full border border-gray-300 pr-6 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
 
                                 </div>
                                 <div className=' col-span-9 sm:col-span-3 lg:col-span-2 '>
@@ -230,7 +232,7 @@ const EditRecord: React.FC = () => {
                                 </div>
                                 <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm text-gray-700 my-4'>Appointment Time</div>
-                                    <input disabled={!editing} required value={appTime} onChange={(e) => setAppTime(e.target.value)} type="time" className='w-full border border-gray-300  rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                                    <Input disabled={!editing} required value={appTime} onChange={(e) => setAppTime(e.target.value)} type="time" className='w-full border border-gray-300  rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                                 </div>
 
                             </div>
@@ -242,11 +244,11 @@ const EditRecord: React.FC = () => {
                             <div className="grid grid-cols-10 gap-y-2 gap-x-5 lg:gap-x-14 py-2">
                                 <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm text-gray-700 my-3'>Address 1</div>
-                                    <input disabled={!editing} required value={address} onChange={(e) => setAddress(e.target.value)} type="text" className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                                    <Input disabled={!editing} required value={address} onChange={(e) => setAddress(e.target.value)} type="text" className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                                 </div>
                                 <div className=' col-span-9 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm text-gray-700 my-3'>City</div>
-                                    <input disabled={!editing} required value={city} onChange={(e) => setCity(e.target.value)} type="text" placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                                    <Input disabled={!editing} required value={city} onChange={(e) => setCity(e.target.value)} type="text" placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                                 </div>
 
                             </div>
@@ -259,19 +261,17 @@ const EditRecord: React.FC = () => {
                             <div className="grid grid-cols-10 gap-y-2 gap-x-5 lg:gap-x-14 py-2">
                                 <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm text-gray-700 my-3'>Before Appointment</div>
-                                    <textarea disabled={!editing} required value={beforeNotes} onChange={(e) => setBeforeNotes(e.target.value)} className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                                    <TextArea disabled={!editing} required value={beforeNotes} onChange={(e) => setBeforeNotes(e.target.value)} className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                                 </div>
                                 <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                                     <div className='text-sm text-gray-700 my-3'>After Appointment</div>
-                                    <textarea disabled={status == 'pending' || !editing} value={afterNotes} onChange={(e) => setAfterNotes(e.target.value)} placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                                    <TextArea disabled={status == 'pending' || !editing} value={afterNotes} onChange={(e) => setAfterNotes(e.target.value)} placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                                 </div>
 
                             </div>
                         </div>
                         <div className={`py-2 fixed bottom-5 right-20 transition-all ${editing ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                            <button className="p-2 px-4 float-none md:float-right rounded shadow bg-danger text-sm text-white">
-                                Save
-                            </button>
+                            <Button type="primary" className="p-2 px-4 float-none md:float-right rounded shadow bg-red-theme text-sm text-white" icon={<SaveOutlined className='mr-2' />} size={"small"} >Save</Button>
                         </div>
 
                         <div className="h-20"></div>

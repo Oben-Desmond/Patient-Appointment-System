@@ -15,10 +15,12 @@ export const recordSlice = createSlice({
     reducers: {
         updateRecord: (state, action: PayloadAction<PatientRecord[]>) => {
             state.value = [...action.payload]
+            localStorage.setItem("records", JSON.stringify(state.value))
         },
         editRecordData: (state, action: PayloadAction<PatientRecord>) => {
             const index = state.value.findIndex((rec) => rec.sn == action.payload.sn)
             state.value[index] = action.payload;
+            localStorage.setItem("records", JSON.stringify(state.value))
         },
 
     },

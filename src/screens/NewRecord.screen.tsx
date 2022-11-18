@@ -1,4 +1,5 @@
-import { Alert } from 'antd'
+import { Alert, Button, Input } from 'antd'
+import TextArea from 'antd/lib/input/TextArea'
 import React, { useState } from 'react'
 import { FaEbay } from 'react-icons/fa'
 import { IoArrowBack } from 'react-icons/io5'
@@ -107,9 +108,9 @@ const NewRecord = () => {
         </div>
         <div className="content px-5 md:px-[40px] py-8">
           <div className="nav uppercase">
-            <button onClick={() => navigate(-1)} className='inline-block  float-left mt-[2px] text-[20px]'>
+            <Button onClick={() => navigate(-1)} className='inline-block  float-left mt-[2px] text-[20px]'>
               <IoArrowBack />
-            </button>
+            </Button>
             <span className='text-md font-bold ml-5'>New Record </span>
           </div>
           <div className='px-2 md:px-[40px]'>
@@ -118,19 +119,19 @@ const NewRecord = () => {
               <div className="grid grid-cols-10 gap-y-2 gap-x-5 py-2">
                 <div className='col-span-10 sm:col-span-3 lg:col-span-1 '>
                   <div className='text-sm my-2 text-gray-700'>Unique Code</div>
-                  <input required value={code}
+                  <Input required value={code}
                     //  onChange={(e) => setCode(e.target.value)} 
                     type="text" className='w-full rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
                 <div className='col-span-10 sm:col-span-3 lg:col-span-1 '>
                   <div className='text-sm my-2 text-gray-700'>Age</div>
-                  <input required value={age}
+                  <Input required value={age}
                     onChange={(e) => setAge(e.target.value)}
                     type="number" className='w-full rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
                 <div className=' col-span-10 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm my-2 text-gray-700'>Name</div>
-                  <input required value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <Input required value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
                 <div className=' col-span-10 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm my-2 text-gray-700'>Sex</div>
@@ -141,11 +142,11 @@ const NewRecord = () => {
                 </div>
                 <div className=' col-span-10 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm my-2 text-gray-700'>Phone</div>
-                  <input required value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder='6790845454' className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <Input required value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder='6790845454' className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
                 <div className=' col-span-10 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm my-2 text-gray-700'>Email</div>
-                  <input required value={email} onChange={(e) => setEmail(e.target.value)} type="text" className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <Input required value={email} onChange={(e) => setEmail(e.target.value)} type="text" className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
 
               </div>
@@ -168,7 +169,7 @@ const NewRecord = () => {
               <div className="grid grid-cols-10 gap-y-2 gap-x-5 lg:gap-x-14 py-2">
                 <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm text-gray-700 my-4'>Appointment date</div>
-                  <input required value={date} onChange={(e) => setDate(e.target.value)} type="date" className='input-field w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <Input required value={date} onChange={(e) => setDate(e.target.value)} type="date" className='Input-field w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
                 <div className=' col-span-9 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm text-gray-700 my-4'>First time</div>
@@ -179,11 +180,11 @@ const NewRecord = () => {
                 </div>
                 <div className=' col-span-9 sm:col-span-3 lg:col-span-2 relative'>
                   <div className='text-sm text-gray-700 my-4'>Request date</div>
-                  <input required value={requestDate} onChange={(e) => setRequestDate(e.target.value)} type={'date'} className='input-field2 w-full border border-gray-300 pr-6 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <Input required value={requestDate} onChange={(e) => setRequestDate(e.target.value)} type={'date'} className='Input-field w-full border border-gray-300 pr-6 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
 
                 </div>
                 <div className=' col-span-9 sm:col-span-3 lg:col-span-2 '>
-                  <div className='text-sm text-gray-700 my-4'>Appointment Status</div>
+                  <div className='text-sm text-gray-700 my-4'>Appointment Statuhomehhs</div>
                   <select required disabled value={status} onChange={(e) => setStatus(e.target.value as "pending")} className='w-full border border-gray-300 pr-6 rounded text-sm p-2 text-gray-800 outline-none inline-block'>
                     <option value="pending">Pending</option>
                     <option value="missed">Missed</option>
@@ -193,7 +194,7 @@ const NewRecord = () => {
                 </div>
                 <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm text-gray-700 my-4'>Appointment Time</div>
-                  <input required value={appTime} onChange={(e) => setAppTime(e.target.value)} type="time" className='w-full rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <Input required value={appTime} onChange={(e) => setAppTime(e.target.value)} type="time" className='w-full rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
 
               </div>
@@ -205,11 +206,11 @@ const NewRecord = () => {
               <div className="grid grid-cols-10 gap-y-2 gap-x-5 lg:gap-x-14 py-2">
                 <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm text-gray-700 my-3'>Address 1</div>
-                  <input required value={address} onChange={(e) => setAddress(e.target.value)} type="text" className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <Input required value={address} onChange={(e) => setAddress(e.target.value)} type="text" className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
                 <div className=' col-span-9 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm text-gray-700 my-3'>City</div>
-                  <input required value={city} onChange={(e) => setCity(e.target.value)} type="text" placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <Input required value={city} onChange={(e) => setCity(e.target.value)} type="text" placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
 
               </div>
@@ -222,19 +223,19 @@ const NewRecord = () => {
               <div className="grid grid-cols-10 gap-y-2 gap-x-5 lg:gap-x-14 py-2">
                 <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm text-gray-700 my-3'>Before Appointment</div>
-                  <textarea required value={beforeNotes} onChange={(e) => setBeforeNotes(e.target.value)} className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <TextArea required value={beforeNotes} onChange={(e) => setBeforeNotes(e.target.value)} className='w-full border border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
                 <div className='col-span-9 sm:col-span-3 lg:col-span-2 '>
                   <div className='text-sm text-gray-700 my-3'>After Appointment</div>
-                  <textarea disabled={status == 'pending'} value={afterNotes} onChange={(e) => setAfterNotes(e.target.value)} placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
+                  <TextArea disabled={status == 'pending'} value={afterNotes} onChange={(e) => setAfterNotes(e.target.value)} placeholder='' className='w-full border  border-gray-300 rounded text-sm p-2 text-gray-800 outline-none inline-block' />
                 </div>
 
               </div>
             </div>
             <div className="py-2 ">
-              <button className="p-2 px-4 float-none md:float-right rounded shadow bg-danger text-sm text-white">
+              <Button className="p-2 px-4 float-none md:float-right rounded shadow bg-red-theme text-sm text-white">
                 Save
-              </button>
+              </Button>
             </div>
 
             <div className="h-20"></div>

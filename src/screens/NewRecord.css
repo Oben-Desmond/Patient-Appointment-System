@@ -1,8 +1,8 @@
-.input-field {
+.Input-field {
     position: relative;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+.Input-field[type="date"]::-webkit-calendar-picker-indicator {
     opacity: 1;
     display: block;
     background-repeat: no-repeat;
@@ -11,17 +11,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-width: thin
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+.Input-field[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
     left: 4px;
 }
 
-input::-webkit-datetime-edit-fields-wrapper {
+.Input-field::-webkit-datetime-edit-fields-wrapper {
     position: relative;
-    left: 10px;
+    left: 25px;
 }
 
-input::-webkit-datetime-edit {
+Input-field::-webkit-datetime-edit {
     position: relative;
     left: 10px;
 }
